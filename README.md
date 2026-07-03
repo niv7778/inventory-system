@@ -43,6 +43,46 @@ inventory-system/
     ├── main.cpp             # Demo + performance benchmark
     └── test_inventory.cpp   # Assert-based test suite (8 tests)
 ```
+## Sample output
+
+=== Inventory Demo ===
+
+Initial inventory:
+ID      Name                Qty       Price
+101     Wireless Mouse      50        499
+102     Mechanical Keyboard 30        2499
+103     USB-C Hub           100       899
+
+Placing an order: 5 x Wireless Mouse (id 101)
+Order succeeded.
+
+Attempting to over-order: 1000 x USB-C Hub (id 103)
+Order failed (insufficient stock).
+
+Inventory after orders:
+ID      Name                Qty       Price
+101     Wireless Mouse      45        499
+102     Mechanical Keyboard 30        2499
+103     USB-C Hub           100       899
+
+Saved inventory to inventory.csv
+
+=== Performance Benchmark: Linear Search vs Hash Map ===
+Loaded 100000 products.
+Linear search (O(n)):   374 microseconds (found: Product99999)
+Hash map search (O(1)): 0 microseconds (found: Product99999)
+Hash map lookup was ~374x faster on this run.
+
+testAddAndFindLinear passed
+testAddAndFindHashMap passed
+testFindMissingReturnsNull passed
+testPlaceOrderSucceedsWithEnoughStock passed
+testPlaceOrderFailsWithInsufficientStock passed
+testPlaceOrderOnMissingProductFails passed
+testSizeTracksAddedProducts passed
+testSaveAndLoadRoundTrip passed
+
+All tests passed!
 
 ## Build & run
 
