@@ -43,8 +43,9 @@ inventory-system/
     ├── main.cpp             # Demo + performance benchmark
     └── test_inventory.cpp   # Assert-based test suite (8 tests)
 ```
-## Sample output
+## Sample Output
 
+```
 === Inventory Demo ===
 
 Initial inventory:
@@ -72,7 +73,9 @@ Loaded 100000 products.
 Linear search (O(n)):   374 microseconds (found: Product99999)
 Hash map search (O(1)): 0 microseconds (found: Product99999)
 Hash map lookup was ~374x faster on this run.
+```
 
+```
 testAddAndFindLinear passed
 testAddAndFindHashMap passed
 testFindMissingReturnsNull passed
@@ -83,6 +86,7 @@ testSizeTracksAddedProducts passed
 testSaveAndLoadRoundTrip passed
 
 All tests passed!
+```
 
 ## Build & run
 
